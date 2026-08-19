@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { skillGroups } from '../data/portfolio'
+import SkillChip from './SkillChip.vue'
 </script>
 
 <template>
@@ -16,7 +17,12 @@ import { skillGroups } from '../data/portfolio'
         >
           <h3 class="group-title">{{ group.category }}</h3>
           <div class="chips">
-            <span v-for="item in group.items" :key="item" class="tag">{{ item }}</span>
+            <SkillChip
+              v-for="(item, i) in group.items"
+              :key="item"
+              :name="item"
+              v-reveal="i * 40"
+            />
           </div>
         </div>
       </div>
