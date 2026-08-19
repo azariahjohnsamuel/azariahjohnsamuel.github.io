@@ -40,8 +40,8 @@ export const profile = {
   tagline:
     'Full-Stack Application Architect — Industrial Automation and Enterprise Systems Specialist',
   email: 'azariahjohnsamuel@gmail.com',
-  phone: '+91 8220077523',
-  location: 'Chennai, India',
+  phone: '+44 7539 010156',
+  location: 'United Kingdom',
   linkedin: 'https://www.linkedin.com/in/azariahjohnsamuel',
   github: 'https://github.com/azariahjohnsamuel',
   resumeUrl: '/assets/files/azariah-john-samuel-resume.pdf',
@@ -100,7 +100,7 @@ export const experience: ExperienceEntry[] = [
   {
     company: 'Agito Global',
     title: 'Front End Developer',
-    location: 'United Kingdom (Remote)',
+    location: 'United Kingdom',
     start: '2025-03-01',
     end: '',
     project: 'Momentum',
