@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
 import { profile } from '../data/portfolio'
 import TypewriterText from './TypewriterText.vue'
+import PlanetAvatar from './PlanetAvatar.vue'
+import Starfield from './Starfield.vue'
+import HeroHud from './HeroHud.vue'
 
 const phrases = [
   'Vue 3 & TypeScript',
@@ -8,17 +12,44 @@ const phrases = [
   'Keycloak & Microsoft Entra ID',
   'Industrial Automation Systems',
 ]
+
+const heroEl = ref<HTMLElement | null>(null)
+let raf = 0
+
+function onMouseMove(e: MouseEvent) {
+  if (raf) return
+  raf = requestAnimationFrame(() => {
+    raf = 0
+    const el = heroEl.value
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const px = (e.clientX - rect.left) / rect.width - 0.5
+    const py = (e.clientY - rect.top) / rect.height - 0.5
+    el.style.setProperty('--px', px.toFixed(3))
+    el.style.setProperty('--py', py.toFixed(3))
+  })
+}
+
+onMounted(() => {
+  if (window.matchMedia?.('(hover: hover)').matches) {
+    window.addEventListener('mousemove', onMouseMove, { passive: true })
+  }
+})
+onUnmounted(() => {
+  window.removeEventListener('mousemove', onMouseMove)
+  if (raf) cancelAnimationFrame(raf)
+})
 </script>
 
 <template>
-  <section id="top" class="hero">
+  <section id="top" ref="heroEl" class="hero">
+    <Starfield />
     <div class="orb orb-a" aria-hidden="true" />
     <div class="orb orb-b" aria-hidden="true" />
     <div class="grid-overlay" aria-hidden="true" />
+    <HeroHud />
     <div class="container hero-inner">
-      <div class="avatar-ring">
-        <img class="avatar" src="/assets/profile-pic.png" :alt="profile.displayName" />
-      </div>
+      <PlanetAvatar />
       <span class="section-label" v-reveal>Portfolio</span>
       <h1 class="name" v-reveal="80">{{ profile.displayName }}</h1>
       <p class="title" v-reveal="140">{{ profile.title }} — {{ profile.tagline }}</p>
@@ -26,7 +57,7 @@ const phrases = [
         <span class="prompt">&gt;</span>
         <TypewriterText :phrases="phrases" />
       </p>
-      <p class="summary" v-reveal="220">{{ profile.summary }}</p>
+      <p class="summary reveal-dim" v-reveal="220">{{ profile.summary }}</p>
       <div class="actions" v-reveal="260">
         <a class="btn btn-primary" :href="profile.resumeUrl" target="_blank" rel="noopener">Download Résumé</a>
         <a class="btn btn-ghost" :href="`mailto:${profile.email}`">Email Me</a>
@@ -98,38 +129,25 @@ const phrases = [
   }
 }
 
-.avatar-ring {
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  padding: 3px;
-  margin-bottom: 24px;
-  background: conic-gradient(from 0deg, var(--accent), var(--accent-blue), var(--accent-violet), var(--accent));
-  animation: spin 6s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  border: 3px solid var(--bg);
-}
-
 .name {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 8px;
+  font-size: clamp(2.6rem, 7.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin-bottom: 12px;
   background: linear-gradient(120deg, var(--text) 30%, var(--accent) 70%, var(--accent-blue));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.summary.reveal-dim {
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease), color 0.8s var(--ease);
+  color: #4b5568;
+}
+
+.summary.reveal-dim.is-visible {
+  color: var(--text-muted);
 }
 
 .title {
@@ -167,8 +185,7 @@ const phrases = [
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orb,
-  .avatar-ring {
+  .orb {
     animation: none;
   }
 }

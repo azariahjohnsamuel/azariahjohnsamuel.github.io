@@ -75,7 +75,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   background: rgba(11, 15, 23, 0.75);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .nav.scrolled {
@@ -112,6 +112,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   font-size: 0.9rem;
   font-weight: 500;
   padding-bottom: 4px;
+  transition: color 0.3s var(--ease);
 }
 
 .links a::after {
@@ -124,7 +125,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s ease;
+  transition: transform 0.35s var(--ease);
 }
 
 .links a:hover {
@@ -162,7 +163,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   width: 20px;
   height: 2px;
   background: var(--text);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 
 .menu-toggle.open span:nth-child(1) {
@@ -181,7 +182,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 .drop-enter-active,
 .drop-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
 }
 .drop-enter-from,
 .drop-leave-to {

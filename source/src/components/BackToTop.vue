@@ -41,7 +41,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
 .back-to-top:hover {
@@ -51,7 +51,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 .pop-enter-active,
 .pop-leave-active {
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
 }
 .pop-enter-from,
 .pop-leave-to {

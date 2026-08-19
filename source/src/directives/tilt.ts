@@ -15,9 +15,11 @@ export const vTilt: Directive<TiltElement> = {
       const rect = el.getBoundingClientRect()
       const x = (e.clientX - rect.left) / rect.width - 0.5
       const y = (e.clientY - rect.top) / rect.height - 0.5
+      el.style.transition = 'transform 0.15s ease-out'
       el.style.transform = `perspective(800px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) translateY(-4px)`
     }
     const reset = () => {
+      el.style.transition = 'transform 0.6s var(--ease, cubic-bezier(0.16, 1, 0.3, 1))'
       el.style.transform = ''
     }
 

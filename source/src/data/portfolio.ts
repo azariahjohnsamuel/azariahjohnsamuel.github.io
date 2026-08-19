@@ -53,16 +53,16 @@ export const skillGroups: SkillGroup[] = [
   {
     category: 'Front End',
     items: [
-      'Vue.js', 'Vue 3 Composition API', 'TypeScript', 'JavaScript', 'Vuetify', 'Pinia',
-      'Vue Router', 'Vite', 'Apollo Client', 'GraphQL', 'SignalR', 'WebSockets',
-      'Responsive Design', 'i18n',
+      'Vue.js', 'Vue 3 Composition API', 'React.js', 'Next.js', 'Angular', 'TypeScript',
+      'JavaScript', 'jQuery', 'Vuetify', 'Pinia', 'Vue Router', 'Vite', 'Apollo Client',
+      'GraphQL', 'SignalR', 'WebSockets', 'AEM', 'Responsive Design', 'i18n',
     ],
   },
   {
     category: 'Backend',
     items: [
       'C#', '.NET', 'ASP.NET Core', 'Hot Chocolate GraphQL', 'Entity Framework Core',
-      'LINQ', 'REST APIs', 'Windows Services', 'Repository Pattern',
+      'LINQ', 'REST APIs', 'Salesforce APEX', 'Windows Services', 'Repository Pattern',
     ],
   },
   {
@@ -118,16 +118,34 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'Cognizant',
-    title: 'Associate — Projects',
+    title: 'Front-End Developer & Team Leader',
+    location: 'Chennai, India',
+    start: '2023-07-01',
+    end: '2025-02-28',
+    clients: ['Ford Motor Company'],
+    summary:
+      'Led a team of developers building an eCommerce platform for non-factory-fitted Ford vehicle accessories, integrating multiple front-end frameworks into a single platform.',
+    highlights: [
+      'Led a team of developers delivering an eCommerce platform for non-factory-fitted Ford accessories, following best-practice coding and design patterns.',
+      'Integrated Angular, jQuery, and React into a unified front-end platform, ensuring performance and optimization across modules.',
+      'Built a standalone Next.js accessories website with responsive design, integrated with the main vehicle-purchase platform.',
+      'Owned code reviews and deployment processes, keeping post-launch issues to a minimum.',
+    ],
+  },
+  {
+    company: 'Cognizant',
+    title: 'Front-End Developer',
     location: 'Chennai, India',
     start: '2021-10-22',
-    end: '2025-02-28',
+    end: '2023-06-30',
     clients: ['AbbVie'],
+    project: 'Sypher',
     summary:
-      'Delivered a React-based data visualization application for AbbVie on top of a Salesforce backend, working in an agile team with daily scrums.',
+      'Delivered the Sypher application for AbbVie, visualizing franchise and product performance on top of a Salesforce APEX backend, working in an agile team with daily scrums.',
     highlights: [
-      'Developed reusable React JS components consuming Salesforce data and rendering it with Chart.js.',
-      'Improved data accessibility and visualization efficiency by ~20% through UI and component work.',
+      'Built reusable UI components with React JS and Vue.js, consuming Salesforce APEX data and rendering it with Chart.js.',
+      'Optimized components for fast load times and responsive interfaces, improving data-visualization efficiency by ~20%.',
+      'Integrated the Salesforce APEX backend so frontend and backend collaborated seamlessly.',
       'Participated in agile ceremonies and daily scrums to keep delivery on schedule.',
     ],
   },
@@ -177,13 +195,24 @@ export const experience: ExperienceEntry[] = [
 
 export const projects: ProjectEntry[] = [
   {
+    tagName: 'Ford',
+    title: 'Ford Motor Company — Accessories eCommerce',
+    skills: 'React JS, Next.js, Angular, jQuery, AEM, HTML5, CSS3',
+    description:
+      'An eCommerce platform for non-factory-fitted Ford vehicle accessories. Multiple front-end frameworks (Angular, jQuery, React) were integrated into a single platform, alongside a standalone, responsive Next.js accessories site tied into the main vehicle-purchase flow.',
+    responsibilities:
+      'Led the front-end development team, owning code reviews, deployment processes, and coding standards across the platform.',
+    size: '5 Members',
+    location: 'Chennai',
+  },
+  {
     tagName: 'AbbVie',
     title: 'AbbVie — Sypher',
-    skills: 'React JS, JavaScript, Chart.js, MUI, HTML5, SCSS, JSON',
+    skills: 'React JS, Vue.js, Salesforce APEX, JavaScript, Chart.js, MUI, HTML5, SCSS, JSON',
     description:
-      'A data visualization application used by the client to track product data, metrics, and performance. Built on a Salesforce backend with a React JS front end made up of reusable components that pull data from the backend and render it with Chart.js per requirements.',
+      'A data visualization application letting the client track franchise and product performance metrics. Built on a Salesforce APEX backend with reusable React JS and Vue.js components rendering the data with Chart.js, optimized for fast load times.',
     responsibilities:
-      'UI development, agile process participation, and daily scrums. Developed multiple reusable front-end components in React JS.',
+      'UI development, agile process participation, and daily scrums. Developed multiple reusable front-end components in React JS and Vue.js.',
     size: '4 Members',
     location: 'Chennai',
     logo: '/assets/logo/abbvie.svg',
