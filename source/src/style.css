@@ -173,6 +173,24 @@ ul {
   text-decoration: none;
 }
 
+/* Scroll-driven zoom/focus per section, via the v-zoom-section directive */
+.zoom-section {
+  transform: scale(var(--zoom, 1));
+  opacity: var(--fade, 1);
+  filter: blur(calc(var(--blur, 0) * 1px));
+  transition: transform 0.15s linear, opacity 0.15s linear, filter 0.15s linear;
+  will-change: transform, opacity, filter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoom-section {
+    transform: none;
+    opacity: 1;
+    filter: none;
+    transition: none;
+  }
+}
+
 /* Scroll-reveal, driven by the v-reveal directive */
 .reveal {
   opacity: 0;

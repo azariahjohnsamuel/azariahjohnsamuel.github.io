@@ -3,7 +3,7 @@ import { education } from '../data/portfolio'
 </script>
 
 <template>
-  <section id="education" class="section">
+  <section id="education" class="section" v-zoom-section>
     <div class="container">
       <span class="section-label" v-reveal>Background</span>
       <h2 class="section-title" v-reveal="60">Education</h2>

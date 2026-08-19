@@ -4,7 +4,7 @@ import SkillChip from './SkillChip.vue'
 </script>
 
 <template>
-  <section id="skills" class="section">
+  <section id="skills" class="section" v-zoom-section>
     <div class="container">
       <span class="section-label" v-reveal>Toolbox</span>
       <h2 class="section-title" v-reveal="60">Skills</h2>

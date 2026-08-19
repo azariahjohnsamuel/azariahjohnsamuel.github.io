@@ -4,7 +4,7 @@ import { formatRange, durationLabel } from '../utils/format'
 </script>
 
 <template>
-  <section id="experience" class="section">
+  <section id="experience" class="section" v-zoom-section>
     <div class="container">
       <span class="section-label" v-reveal>Career</span>
       <h2 class="section-title" v-reveal="60">Experience</h2>
