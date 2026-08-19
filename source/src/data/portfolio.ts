@@ -10,6 +10,7 @@ export interface ExperienceEntry {
   start: string
   end: string
   clients?: string[]
+  project?: string
   summary: string
   highlights: string[]
 }
@@ -102,10 +103,11 @@ export const experience: ExperienceEntry[] = [
     location: 'United Kingdom (Remote)',
     start: '2025-03-01',
     end: '',
+    project: 'Momentum',
     summary:
-      'Officially a Front End Developer, but works across the full delivery lifecycle for enterprise warehouse-management and industrial-automation systems — front end, backend APIs, identity, infrastructure, and production support.',
+      'Officially a Front End Developer on Momentum, but works across the full delivery lifecycle for enterprise warehouse-management and industrial-automation systems — front end, backend APIs, identity, infrastructure, and production support.',
     highlights: [
-      'Build enterprise UIs with Vue 3, TypeScript, Vuetify, Pinia, and Apollo Client for GraphQL data.',
+      'Build enterprise UIs for Momentum with Vue 3, TypeScript, Vuetify, Pinia, and Apollo Client for GraphQL data.',
       'Develop and integrate backend APIs using ASP.NET Core and Hot Chocolate GraphQL against SQL Server.',
       'Configure and troubleshoot authentication with Keycloak, Microsoft Entra ID, OAuth 2.0, OpenID Connect, and JWT.',
       'Support RabbitMQ messaging, SignalR real-time updates, and Ocelot API Gateway routing across services.',

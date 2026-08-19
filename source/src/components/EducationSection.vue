@@ -5,10 +5,15 @@ import { education } from '../data/portfolio'
 <template>
   <section id="education" class="section">
     <div class="container">
-      <span class="section-label">Background</span>
-      <h2 class="section-title">Education</h2>
+      <span class="section-label" v-reveal>Background</span>
+      <h2 class="section-title" v-reveal="60">Education</h2>
       <div class="grid">
-        <div v-for="item in education" :key="item.title" class="card edu">
+        <div
+          v-for="(item, index) in education"
+          :key="item.title"
+          class="card edu"
+          v-reveal="index * 70"
+        >
           <h3 class="degree">{{ item.title }}</h3>
           <p class="course">{{ item.course }}</p>
           <p class="institution">{{ item.institution }}</p>

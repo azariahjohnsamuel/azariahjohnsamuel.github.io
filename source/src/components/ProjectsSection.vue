@@ -5,10 +5,16 @@ import { projects } from '../data/portfolio'
 <template>
   <section id="projects" class="section">
     <div class="container">
-      <span class="section-label">Selected Work</span>
-      <h2 class="section-title">Projects</h2>
+      <span class="section-label" v-reveal>Selected Work</span>
+      <h2 class="section-title" v-reveal="60">Projects</h2>
       <div class="grid">
-        <article v-for="project in projects" :key="project.title" class="card project">
+        <article
+          v-for="(project, index) in projects"
+          :key="project.title"
+          class="card project"
+          v-reveal="index * 80"
+          v-tilt
+        >
           <header class="project-header">
             <span v-if="project.logo" class="logo-badge">
               <img :src="project.logo" :alt="project.tagName" class="logo" />

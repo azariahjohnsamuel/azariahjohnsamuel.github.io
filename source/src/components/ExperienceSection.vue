@@ -6,10 +6,15 @@ import { formatRange, durationLabel } from '../utils/format'
 <template>
   <section id="experience" class="section">
     <div class="container">
-      <span class="section-label">Career</span>
-      <h2 class="section-title">Experience</h2>
+      <span class="section-label" v-reveal>Career</span>
+      <h2 class="section-title" v-reveal="60">Experience</h2>
       <ol class="timeline">
-        <li v-for="job in experience" :key="`${job.company}-${job.title}-${job.start}`" class="entry">
+        <li
+          v-for="(job, index) in experience"
+          :key="`${job.company}-${job.title}-${job.start}`"
+          class="entry"
+          v-reveal="index * 90"
+        >
           <div class="entry-header">
             <div>
               <h3 class="role">{{ job.title }}</h3>
@@ -23,6 +28,7 @@ import { formatRange, durationLabel } from '../utils/format'
               <span class="duration">{{ durationLabel(job.start, job.end) }}</span>
             </div>
           </div>
+          <p v-if="job.project" class="clients">Product: {{ job.project }}</p>
           <p v-if="job.clients?.length" class="clients">Client: {{ job.clients.join(', ') }}</p>
           <p class="summary">{{ job.summary }}</p>
           <ul class="highlights">

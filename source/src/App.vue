@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import AppNav from './components/AppNav.vue'
+import ScrollProgress from './components/ScrollProgress.vue'
+import BackToTop from './components/BackToTop.vue'
 import HeroSection from './components/HeroSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
@@ -9,6 +11,7 @@ import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
+  <ScrollProgress />
   <AppNav />
   <main>
     <HeroSection />
@@ -18,4 +21,5 @@ import AppFooter from './components/AppFooter.vue'
     <EducationSection />
   </main>
   <AppFooter />
+  <BackToTop />
 </template>

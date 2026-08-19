@@ -5,10 +5,15 @@ import { skillGroups } from '../data/portfolio'
 <template>
   <section id="skills" class="section">
     <div class="container">
-      <span class="section-label">Toolbox</span>
-      <h2 class="section-title">Skills</h2>
+      <span class="section-label" v-reveal>Toolbox</span>
+      <h2 class="section-title" v-reveal="60">Skills</h2>
       <div class="groups">
-        <div v-for="group in skillGroups" :key="group.category" class="group">
+        <div
+          v-for="(group, index) in skillGroups"
+          :key="group.category"
+          class="group"
+          v-reveal="index * 70"
+        >
           <h3 class="group-title">{{ group.category }}</h3>
           <div class="chips">
             <span v-for="item in group.items" :key="item" class="tag">{{ item }}</span>
