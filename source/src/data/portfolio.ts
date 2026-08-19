@@ -44,7 +44,7 @@ export const profile = {
   location: 'Chennai, India',
   linkedin: 'https://www.linkedin.com/in/azariahjohnsamuel',
   github: 'https://github.com/azariahjohnsamuel',
-  resumeUrl: '/assets/files/azariah-john-samuel-resume-2024.pdf',
+  resumeUrl: '/assets/files/azariah-john-samuel-resume.pdf',
   summary:
     'Senior Software Engineer with a strong front-end foundation and growing ownership across full-stack development, system architecture, identity and access management, DevOps, infrastructure, and industrial automation integration. Started as a front-end developer specializing in Vue.js, TypeScript, and responsive UI design, then progressively expanded into backend services, API development, authentication, database integration, messaging systems, monitoring, deployment automation, and technical architecture. Currently works across the complete delivery lifecycle for enterprise warehouse-management and industrial-automation systems — from Vue/TypeScript interfaces through .NET and GraphQL APIs to Keycloak, Entra ID, RabbitMQ, and CI/CD — including integrations with PLCs, robots, conveyors, scanners, and printers.',
 }
