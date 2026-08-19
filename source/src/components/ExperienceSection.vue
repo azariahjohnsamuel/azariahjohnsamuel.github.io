@@ -12,28 +12,35 @@ import { formatRange, durationLabel } from '../utils/format'
         <li
           v-for="(job, index) in experience"
           :key="`${job.company}-${job.title}-${job.start}`"
-          class="entry"
+          class="entry-row"
           v-reveal="index * 90"
         >
-          <div class="entry-header">
-            <div>
-              <h3 class="role">{{ job.title }}</h3>
-              <p class="company">
-                {{ job.company }}
-                <span v-if="job.location" class="location">· {{ job.location }}</span>
-              </p>
-            </div>
-            <div class="period">
-              <span>{{ formatRange(job.start, job.end) }}</span>
-              <span class="duration">{{ durationLabel(job.start, job.end) }}</span>
-            </div>
+          <div class="rail" aria-hidden="true">
+            <span class="node" :class="{ current: !job.end }">
+              <span class="node-core" />
+            </span>
           </div>
-          <p v-if="job.project" class="clients">Product: {{ job.project }}</p>
-          <p v-if="job.clients?.length" class="clients">Client: {{ job.clients.join(', ') }}</p>
-          <p class="summary">{{ job.summary }}</p>
-          <ul class="highlights">
-            <li v-for="point in job.highlights" :key="point">{{ point }}</li>
-          </ul>
+          <div class="entry">
+            <div class="entry-header">
+              <div>
+                <h3 class="role">{{ job.title }}</h3>
+                <p class="company">
+                  {{ job.company }}
+                  <span v-if="job.location" class="location">· {{ job.location }}</span>
+                </p>
+              </div>
+              <div class="period">
+                <span>{{ formatRange(job.start, job.end) }}</span>
+                <span class="duration">{{ durationLabel(job.start, job.end) }}</span>
+              </div>
+            </div>
+            <p v-if="job.project" class="clients">Product: {{ job.project }}</p>
+            <p v-if="job.clients?.length" class="clients">Client: {{ job.clients.join(', ') }}</p>
+            <p class="summary">{{ job.summary }}</p>
+            <ul class="highlights">
+              <li v-for="point in job.highlights" :key="point">{{ point }}</li>
+            </ul>
+          </div>
         </li>
       </ol>
     </div>
@@ -45,12 +52,84 @@ import { formatRange, durationLabel } from '../utils/format'
   display: flex;
   flex-direction: column;
   gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-row {
+  display: flex;
+  gap: 16px;
+}
+
+.rail {
+  position: relative;
+  width: 24px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.rail::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: -20px;
+  width: 2px;
+  background: linear-gradient(var(--accent-strong), var(--accent-blue), var(--accent-violet));
+  opacity: 0.32;
+}
+
+.entry-row:last-child .rail::before {
+  bottom: 0;
+}
+
+.node {
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.node-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.node.current {
+  border-color: var(--accent);
+}
+
+.node.current .node-core {
+  background: var(--accent);
+  box-shadow: 0 0 8px 2px var(--accent);
+  animation: node-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .entry {
+  flex: 1;
+  min-width: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent-strong);
   border-radius: var(--radius);
   padding: 24px 28px;
 }
@@ -127,5 +206,23 @@ import { formatRange, durationLabel } from '../utils/format'
   height: 6px;
   border-radius: 50%;
   background: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .rail {
+    width: 18px;
+  }
+  .entry {
+    padding: 20px 18px;
+  }
+  .period {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node.current .node-core {
+    animation: none;
+  }
 }
 </style>

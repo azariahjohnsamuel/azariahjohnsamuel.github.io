@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
 import { profile } from '../data/portfolio'
 import TypewriterText from './TypewriterText.vue'
 import PlanetAvatar from './PlanetAvatar.vue'
-import Starfield from './Starfield.vue'
 import HeroHud from './HeroHud.vue'
 
 const phrases = [
@@ -12,38 +10,10 @@ const phrases = [
   'Keycloak & Microsoft Entra ID',
   'Industrial Automation Systems',
 ]
-
-const heroEl = ref<HTMLElement | null>(null)
-let raf = 0
-
-function onMouseMove(e: MouseEvent) {
-  if (raf) return
-  raf = requestAnimationFrame(() => {
-    raf = 0
-    const el = heroEl.value
-    if (!el) return
-    const rect = el.getBoundingClientRect()
-    const px = (e.clientX - rect.left) / rect.width - 0.5
-    const py = (e.clientY - rect.top) / rect.height - 0.5
-    el.style.setProperty('--px', px.toFixed(3))
-    el.style.setProperty('--py', py.toFixed(3))
-  })
-}
-
-onMounted(() => {
-  if (window.matchMedia?.('(hover: hover)').matches) {
-    window.addEventListener('mousemove', onMouseMove, { passive: true })
-  }
-})
-onUnmounted(() => {
-  window.removeEventListener('mousemove', onMouseMove)
-  if (raf) cancelAnimationFrame(raf)
-})
 </script>
 
 <template>
-  <section id="top" ref="heroEl" class="hero">
-    <Starfield />
+  <section id="top" class="hero">
     <div class="orb orb-a" aria-hidden="true" />
     <div class="orb orb-b" aria-hidden="true" />
     <div class="grid-overlay" aria-hidden="true" />
