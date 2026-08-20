@@ -38,7 +38,7 @@ export const profile = {
   displayName: 'Azariah John Samuel',
   title: 'Senior Software Engineer',
   tagline:
-    'Full-Stack Application Architect — Industrial Automation and Enterprise Systems Specialist',
+    'Full-Stack Application Architect, Industrial Automation and Enterprise Systems Specialist',
   email: 'azariahjohnsamuel@gmail.com',
   phone: '+44 7539 010156',
   location: 'United Kingdom',
@@ -46,7 +46,7 @@ export const profile = {
   github: 'https://github.com/azariahjohnsamuel',
   resumeUrl: '/assets/files/azariah-john-samuel-resume.pdf',
   summary:
-    'Senior Software Engineer with a strong front-end foundation and growing ownership across full-stack development, system architecture, identity and access management, DevOps, infrastructure, and industrial automation integration. Started as a front-end developer specializing in Vue.js, TypeScript, and responsive UI design, then progressively expanded into backend services, API development, authentication, database integration, messaging systems, monitoring, deployment automation, and technical architecture. Currently works across the complete delivery lifecycle for enterprise warehouse-management and industrial-automation systems — from Vue/TypeScript interfaces through .NET and GraphQL APIs to Keycloak, Entra ID, RabbitMQ, and CI/CD — including integrations with PLCs, robots, conveyors, scanners, and printers.',
+    'Senior Software Engineer with a strong front-end foundation and growing ownership across full-stack development, system architecture, identity and access management, DevOps, infrastructure, and industrial automation integration. Started as a front-end developer specializing in Vue.js, TypeScript, and responsive UI design, then expanded into backend services, API development, authentication, database integration, messaging systems, monitoring, deployment automation, and technical architecture. Currently works across the full delivery lifecycle for enterprise warehouse-management and industrial-automation systems, from Vue and TypeScript interfaces through .NET and GraphQL APIs to Keycloak, Entra ID, RabbitMQ, and CI/CD, including integrations with PLCs, robots, conveyors, scanners, and printers.',
 }
 
 export const skillGroups: SkillGroup[] = [
@@ -105,7 +105,7 @@ export const experience: ExperienceEntry[] = [
     end: '',
     project: 'Momentum',
     summary:
-      'Officially a Front End Developer on Momentum, but works across the full delivery lifecycle for enterprise warehouse-management and industrial-automation systems — front end, backend APIs, identity, infrastructure, and production support.',
+      'Officially a Front End Developer on Momentum, but works across the full delivery lifecycle for enterprise warehouse-management and industrial-automation systems, covering front end, backend APIs, identity, infrastructure, and production support.',
     highlights: [
       'Build enterprise UIs for Momentum with Vue 3, TypeScript, Vuetify, Pinia, and Apollo Client for GraphQL data.',
       'Develop and integrate backend APIs using ASP.NET Core and Hot Chocolate GraphQL against SQL Server.',
@@ -145,7 +145,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       'Built reusable UI components with React JS and Vue.js, consuming Salesforce APEX data and rendering it with Chart.js.',
       'Optimized components for fast load times and responsive interfaces, improving data-visualization efficiency by ~20%.',
-      'Integrated the Salesforce APEX backend so frontend and backend collaborated seamlessly.',
+      'Integrated the Salesforce APEX backend so the frontend and backend worked well together.',
       'Participated in agile ceremonies and daily scrums to keep delivery on schedule.',
     ],
   },
@@ -196,7 +196,7 @@ export const experience: ExperienceEntry[] = [
 export const projects: ProjectEntry[] = [
   {
     tagName: 'Ford',
-    title: 'Ford Motor Company — Accessories eCommerce',
+    title: 'Ford Motor Company: Accessories eCommerce',
     skills: 'React JS, Next.js, Angular, jQuery, AEM, HTML5, CSS3',
     description:
       'An eCommerce platform for non-factory-fitted Ford vehicle accessories. Multiple front-end frameworks (Angular, jQuery, React) were integrated into a single platform, alongside a standalone, responsive Next.js accessories site tied into the main vehicle-purchase flow.',
@@ -207,7 +207,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     tagName: 'AbbVie',
-    title: 'AbbVie — Sypher',
+    title: 'AbbVie: Sypher',
     skills: 'React JS, Vue.js, Salesforce APEX, JavaScript, Chart.js, MUI, HTML5, SCSS, JSON',
     description:
       'A data visualization application letting the client track franchise and product performance metrics. Built on a Salesforce APEX backend with reusable React JS and Vue.js components rendering the data with Chart.js, optimized for fast load times.',
@@ -231,7 +231,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     tagName: 'Infosys Lex',
-    title: 'Infosys Lex — Mercedes-Benz (Daimler) Learning Channel',
+    title: 'Infosys Lex: Mercedes-Benz (Daimler) Learning Channel',
     skills: 'HTML5, CSS, Bootstrap 4',
     description:
       'A dedicated learning channel page for Mercedes-Benz (Daimler) on Infosys Lex, an internal learning platform hosting courses and training for employees across multiple client channels.',

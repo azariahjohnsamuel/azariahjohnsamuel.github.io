@@ -22,7 +22,7 @@ const phrases = [
       <PlanetAvatar />
       <span class="section-label" v-reveal>Portfolio</span>
       <h1 class="name" v-reveal="80">{{ profile.displayName }}</h1>
-      <p class="title" v-reveal="140">{{ profile.title }} — {{ profile.tagline }}</p>
+      <p class="title" v-reveal="140">{{ profile.title }} · {{ profile.tagline }}</p>
       <p class="typewriter-line" v-reveal="180">
         <span class="prompt">&gt;</span>
         <TypewriterText :phrases="phrases" />
