@@ -42,7 +42,7 @@ export const profile = {
   email: 'azariahjohnsamuel@gmail.com',
   phone: '+44 7539 010156',
   location: 'United Kingdom',
-  linkedin: 'https://www.linkedin.com/in/azariahjohnsamuel',
+  linkedin: 'https://www.linkedin.com/in/azariah-john-samuel-ebenezer-015037133/',
   github: 'https://github.com/azariahjohnsamuel',
   resumeUrl: '/assets/files/azariah-john-samuel-resume.pdf',
   summary:
