@@ -20,17 +20,8 @@ test.describe('hero', () => {
     const hero = page.locator('.hero-inner')
     await expect(hero.locator(`a[href="mailto:${profile.email}"]`)).toBeVisible()
     await expect(hero.locator(`a[href="${profile.linkedin}"]`)).toBeVisible()
-    await expect(hero.locator(`a[href="${profile.github}"]`)).toBeVisible()
-
-    const resumeLink = hero.locator(`a[href="${profile.resumeUrl}"]`)
-    await expect(resumeLink).toBeVisible()
-    await expect(resumeLink).toHaveAttribute('target', '_blank')
-  })
-
-  test('resume link resolves to a real PDF', async ({ request }) => {
-    const res = await request.get(profile.resumeUrl)
-    expect(res.status()).toBe(200)
-    expect(res.headers()['content-type']).toContain('pdf')
+    await expect(hero.locator('a[href*="github.com"]')).toHaveCount(0)
+    await expect(hero.getByText(/r[ée]sum[ée]/i)).toHaveCount(0)
   })
 
   test('typewriter line renders some text and keeps changing', async ({ page }) => {

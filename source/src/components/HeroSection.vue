@@ -29,10 +29,8 @@ const phrases = [
       </p>
       <p class="summary reveal-dim" v-reveal="220">{{ profile.summary }}</p>
       <div class="actions" v-reveal="260">
-        <a class="btn btn-primary" :href="profile.resumeUrl" target="_blank" rel="noopener">Download Résumé</a>
-        <a class="btn btn-ghost" :href="`mailto:${profile.email}`">Email Me</a>
+        <a class="btn btn-primary" :href="`mailto:${profile.email}`">Email Me</a>
         <a class="btn btn-ghost" :href="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" :href="profile.github" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>

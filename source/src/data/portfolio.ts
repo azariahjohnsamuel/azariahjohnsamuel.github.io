@@ -43,8 +43,6 @@ export const profile = {
   phone: '+44 7539 010156',
   location: 'United Kingdom',
   linkedin: 'https://www.linkedin.com/in/azariah-john-samuel-ebenezer-015037133/',
-  github: 'https://github.com/azariahjohnsamuel',
-  resumeUrl: '/assets/files/azariah-john-samuel-resume.pdf',
   summary:
     'Senior Software Engineer with a strong front-end foundation and growing ownership across full-stack development, system architecture, identity and access management, DevOps, infrastructure, and industrial automation integration. Started as a front-end developer specializing in Vue.js, TypeScript, and responsive UI design, then expanded into backend services, API development, authentication, database integration, messaging systems, monitoring, deployment automation, and technical architecture. Currently works across the full delivery lifecycle for enterprise warehouse-management and industrial-automation systems, from Vue and TypeScript interfaces through .NET and GraphQL APIs to Keycloak, Entra ID, RabbitMQ, and CI/CD, including integrations with PLCs, robots, conveyors, scanners, and printers.',
 }

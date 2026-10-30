@@ -11,7 +11,6 @@ const year = new Date().getFullYear()
       <div class="links">
         <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
         <a :href="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a>
-        <a :href="profile.github" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </footer>

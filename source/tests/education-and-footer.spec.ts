@@ -24,7 +24,7 @@ test.describe('footer', () => {
 
     await expect(footer.locator(`a[href="mailto:${profile.email}"]`)).toBeVisible()
     await expect(footer.locator(`a[href="${profile.linkedin}"]`)).toBeVisible()
-    await expect(footer.locator(`a[href="${profile.github}"]`)).toBeVisible()
+    await expect(footer.locator('a[href*="github.com"]')).toHaveCount(0)
     await expect(footer).toContainText(String(new Date().getFullYear()))
   })
 })
